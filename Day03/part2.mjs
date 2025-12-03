@@ -7,10 +7,8 @@ let result = 0;
 const DIGITS = 12;
 
 const findHighestNumber = (array) => {
-    const deepArray = JSON.parse(JSON.stringify(array))
-    deepArray.sort((a, b) => b - a)
-    const number = deepArray[0];
-    const index = array.findIndex((n) => n === number)
+    const number = Math.max(...array)
+    const index = array.findIndex((n) => n === number.toString())
     return { number, index }
 }
 
